@@ -6,14 +6,13 @@ Developing a server, I needed a script that allowed me to display a real ID card
 
 ## Installation: ##
 
-add esx_identity_display to your resources directory.<br />
-Add `start esx_identity_display` to your server.cfg.
+1. add esx_identity_display to your resources directory.<br />
+1. Add `start esx_identity_display` to your server.cfg.
 
 ## Feature: ##
 
-Display of an identity card. <br />
-The display can be called via any menu script through the event: 
-`TriggerEvent('displaymenu:displayIdCard')`
+* Display of an identity card. <br />
+  * The display can be called via any menu script through the event: `TriggerEvent('displaymenu:displayIdCard')`
 
 ## Feature to come: ##
-possibility to show his identity card to other players
+* Possibility to show his identity card to other players

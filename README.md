@@ -17,6 +17,6 @@ version 1.1.0<br />
 ## Feature: ##
 
 * Display of an identity card. <br />
-  * The display can be called via any menu script through the event: `TriggerEvent('displaymenu:displayIdCard')`
+  * The display can be called through any menu script through the event: `TriggerEvent('displaymenu:displayIdCard')`
 * Possibility to show his identity card to other players
-  * The display can be called via any menu script through the event: `TriggerEvent('displaymenu:showHisCardToPlayer')`
+  * The display can be called through any menu script through the event: `TriggerEvent('displaymenu:showHisCardToPlayer')`

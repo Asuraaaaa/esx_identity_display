@@ -4,6 +4,11 @@ Developing a server, I needed a script that allowed me to display a real ID card
 
 version 1.0.0<br />
 
+## Requirement: ##
+
+* mysql-async
+* esx_identity
+
 ## Installation: ##
 
 1. add esx_identity_display to your resources directory.<br />

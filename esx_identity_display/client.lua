@@ -9,11 +9,11 @@ end)
 RegisterNetEvent("displaymenu:callBackMyIdentity")
 AddEventHandler("displaymenu:callBackMyIdentity", function(data)	
 	identity = {
-		sex			= Locales['fr'].sex .. data.sex,
-		firstname 	= Locales['fr'].firstname .. data.firstname,
-		lastname 	= Locales['fr'].lastname .. data.lastname,
-		dateofbirth	= Locales['fr'].dateofbirth .. data.dateofbirth,
-		height	 	= Locales['fr'].height .. data.height
+		sex			= Locales[Config.Locale].sex .. data.sex,
+		firstname 	= Locales[Config.Locale].firstname .. data.firstname,
+		lastname 	= Locales[Config.Locale].lastname .. data.lastname,
+		dateofbirth	= Locales[Config.Locale].dateofbirth .. data.dateofbirth,
+		height	 	= Locales[Config.Locale].height .. data.height
 	}
 end)
 

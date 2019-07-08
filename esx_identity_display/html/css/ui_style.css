@@ -1,0 +1,49 @@
+html, body{
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.identity_card {
+	margin-right: 0;
+	padding: 0;
+	display: none;
+	height: 50%;
+	background: url("../img/id_card.png") no-repeat;
+	position: relative;
+	transform: scale(0.5);
+	left: 56%;
+	top: 62%;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+#sexe {
+	position: relative;
+	top: 26%;
+	left: 15%;
+}
+
+#firstname {
+	position: relative;
+	top: 21.5%;
+	left: 15%;
+}
+
+#lastname {
+	position: relative;
+	top: 17.5%;
+	left: 15%;
+}
+
+#dateofbirth {
+	position: relative;
+	top: 14%;
+	left: 15%;
+}
+
+#height {
+	position: relative;
+	top: 10%;
+	left: 15%;
+}

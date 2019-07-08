@@ -1,0 +1,76 @@
+<html>
+    <head>
+		<meta charset="utf-8" />
+		<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+		<link href="css/ui_style.css" rel="stylesheet" media="all" type="text/css">
+		
+		<script type="text/javascript">
+			/*
+			KEY_DOWN	= 40; KEY_UP	= 38; KEY_LEFT	= 37; KEY_RIGHT	= 39; KEY_END	= 35; KEY_BEGIN	= 36; KEY_BACK_TAB = 8; KEY_TAB	= 9; 
+			KEY_SH_TAB = 16; KEY_ENTER	= 13; KEY_ESC	= 27; KEY_SPACE	= 32; KEY_DEL	= 46; KEY_A	= 65; KEY_B	= 66; KEY_C	= 67; KEY_D	= 68; 
+			KEY_E	= 69; KEY_F	= 70; KEY_G	= 71; KEY_H	= 72; KEY_I	= 73; KEY_J	= 74; KEY_K	= 75; KEY_L	= 76; KEY_M	= 77; KEY_N	= 78; KEY_O	= 79; 
+			KEY_P	= 80; KEY_Q	= 81; KEY_R	= 82; KEY_S	= 83; KEY_T	= 84; KEY_U	= 85; KEY_V	= 86; KEY_W	= 87; KEY_X	= 88; KEY_Y	= 89; KEY_Z	= 90; 
+			KEY_PF1	= 112; KEY_PF2	= 113; KEY_PF3	= 114; KEY_PF4	= 115; KEY_PF5	= 116; KEY_PF6	= 117; KEY_PF7	= 118; KEY_PF8	= 119;
+			*/
+			
+			/* IDENTITE DU PERSONNAGE */
+			var identity = { "sexe" : "M", "firstname" : "Emo", "lastname" : "Quentin", "dateofbirth" : "22-01-1998", "height": "172" };
+			
+			/* Au chargement */
+			window.onload = function(e){
+				/* Listener en écoute pour savoir si quelqu'un souhaite afficher la carte d'identité */
+				window.addEventListener('message', function(event) {
+					var item = event.data;
+					identity["sexe"] = item.sex.toUpperCase();
+					identity["firstname"] = item.firstname.toUpperCase();
+					identity["lastname"] = item.lastname.toUpperCase();
+					identity["dateofbirth"] = item.dateofbirth.toUpperCase();
+					identity["height"] = item.height.toUpperCase();
+					
+					if(item.action == "showIDCard") {
+						showIDCard();
+					}
+				})
+				
+				/* Si on press ESC & que la carte est affiché, on demande sa fermeture  */
+				$(document).keydown(function(e) {
+					if(e.keyCode == 27) {
+						if($('#identity_card').css("display") == "block") {
+							hideIDCard();
+						}
+					}
+				});
+				
+				/* Masque la carte */
+				function hideIDCard() {
+					$.post('http://esx_identity_display/stopShowingCard', JSON.stringify({
+						show : "false"
+					}));
+					$('#identity_card').fadeOut();
+				}
+				
+				/* Remplis les informations & affiche la carte */
+				function showIDCard() {
+					$('#sexe').text(identity["sexe"]);
+					$('#firstname').text(identity["firstname"]);
+					$('#lastname').text(identity["lastname"]);
+					$('#dateofbirth').text(identity["dateofbirth"]);
+					$('#height').text(identity["height"]);
+					
+					$('#identity_card').fadeIn();
+				}
+			}
+			
+		</script>
+    </head>
+
+    <body>
+		<div class="identity_card" id="identity_card">
+			<p id="sexe"></p>
+			<p id="firstname"></p>
+			<p id="lastname"></p>
+			<p id="dateofbirth"></p>
+			<p id="height"></p>
+		</div>
+    </body>
+</html>

@@ -1,8 +1,8 @@
 # esx_identity_display #
 
-version 1.0.0<br />
-
 Developing a server, I needed a script that allowed me to display a real ID card using the identity data managed by esx_identity. So I realized this little script.
+
+version 1.0.0<br />
 
 ## Installation: ##
 

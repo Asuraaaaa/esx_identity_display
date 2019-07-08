@@ -1,5 +1,7 @@
 # esx_identity_display #
 
+![Capture](Capture.PNG)
+
 Developing a server, I needed a script that allowed me to display a real ID card using the identity data managed by esx_identity. So I realized this little script.
 
 version 1.1.0<br />

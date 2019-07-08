@@ -22,3 +22,8 @@ AddEventHandler("displaymenu:askMyIdentity", function(id)
 	
 	TriggerClientEvent("displaymenu:callBackMyIdentity", source, getMyIdentity(name))
 end)
+
+RegisterServerEvent("displaymenu:showHisCard")
+AddEventHandler("displaymenu:showHisCard", function(id, identity, target)
+	TriggerClientEvent("displaymenu:callBackShowHisCard", target, identity)
+end)

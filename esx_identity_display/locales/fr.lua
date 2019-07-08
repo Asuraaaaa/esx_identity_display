@@ -6,4 +6,5 @@ Locales['fr'] = {
 	['lastname'] = 'Nom: ',
 	['dateofbirth'] = 'Naissance: ',
 	['height'] = 'Taille: ',
+	['no_players'] = 'Pas de joueur a proximité !',
 }
